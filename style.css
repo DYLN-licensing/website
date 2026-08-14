@@ -1,0 +1,740 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #090807;
+    color: white;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8%;
+
+    border-bottom: 1px solid #24150d;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ff7a18;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 80%,
+            #5c250b 0%,
+            #211009 30%,
+            #090807 65%
+        );
+}
+
+.small-title {
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #ff7a18;
+}
+
+h1 {
+    font-size: clamp(70px, 12vw, 150px);
+
+    line-height: 0.85;
+
+    margin: 20px 0;
+
+    letter-spacing: -5px;
+}
+
+.subtitle {
+    font-size: 20px;
+
+    color: #aaa;
+}
+
+.main-button {
+    margin-top: 35px;
+
+    padding: 15px 35px;
+
+    background: #ff7a18;
+
+    color: black;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+}
+
+.main-button:hover {
+    background: #ff963d;
+}
+
+
+/* SECTIONS */
+
+.section {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 120px 30px;
+
+    text-align: center;
+}
+
+h2 {
+    font-size: 55px;
+
+    margin: 10px 0;
+}
+
+
+/* SONG */
+
+.song {
+    margin-top: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    text-align: left;
+
+    background: #120e0b;
+
+    border: 1px solid #2d1b11;
+
+    padding: 30px;
+
+    border-radius: 20px;
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a18,
+            #7a2609,
+            #080706
+        );
+
+    border-radius: 12px;
+
+    box-shadow: 0 20px 50px rgba(255, 100, 20, 0.2);
+}
+
+.album-art span {
+    font-size: 65px;
+
+    font-weight: bold;
+
+    letter-spacing: -5px;
+}
+
+.song-info h3 {
+    font-size: 30px;
+}
+
+.song-info p {
+    color: #888;
+}
+
+button {
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    background: #ff7a18;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff963d;
+
+    transform: scale(1.05);
+}
+
+
+/* ABOUT */
+
+.about-text {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 40px;
+
+    text-align: center;
+
+    color: #555;
+
+    border-top: 1px solid #21150e;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .song {
+        flex-direction: column;
+
+        text-align: center;
+    }
+.track-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.track-info {
+    width: 100%;
+    max-width: 500px;
+}
+
+.album-art {
+    width: min(280px, 85vw);
+    height: min(280px, 85vw);
+}
+
+}
+.license-options {
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+.license-card {
+    padding: 30px;
+
+    background: #100d0b;
+
+    border: 1px solid #2b1a10;
+
+    border-radius: 20px;
+}
+
+.license-card h3 {
+    font-size: 45px;
+
+    margin: 10px 0;
+}
+
+.license-card p {
+    color: #888;
+
+    line-height: 1.6;
+}
+
+.license-name {
+    color: #ff7a18 !important;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+.license-card button {
+    margin-top: 15px;
+}
+
+.license-card.featured {
+    border-color: #ff7a18;
+
+    transform: translateY(-10px);
+}
+
+@media (max-width: 750px) {
+
+    .license-options {
+        grid-template-columns: 1fr;
+    }
+
+    .license-card.featured {
+        transform: none;
+    }
+
+}
+.preview-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    padding: 0 5px;
+}
+
+.preview-label span {
+    color: #ff7a18;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.preview-label small {
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+/* LICENSE POPUP */
+
+.license-popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+.license-window {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 45px;
+
+    background: #120e0b;
+
+    border: 1px solid #3a2113;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+}
+
+.license-window h2 {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+}
+
+.license-window h3 {
+
+    font-size: 35px;
+
+    color: #ff7a18;
+
+    margin: 15px 0;
+}
+
+.close-button {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    background: none;
+
+    color: #777;
+
+    font-size: 30px;
+
+    padding: 5px 10px;
+}
+
+.close-button:hover {
+
+    color: white;
+
+    background: none;
+
+    transform: none;
+}
+
+.license-features {
+
+    margin: 30px 0;
+
+    padding: 20px;
+
+    background: #0b0908;
+
+    border-radius: 15px;
+
+    text-align: left;
+}
+
+.license-features p {
+
+    color: #aaa;
+
+    margin: 12px 0;
+}
+
+.continue-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    font-size: 16px;
+}
+.album-art {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    display: block;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.track-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.album-art {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 18px;
+    flex-shrink: 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.track-info {
+    text-align: left;
+    max-width: 400px;
+}
+/* TRACK SECTION — POLISH */
+
+.track-header {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.track-info h3 {
+    font-size: 38px;
+    margin: 0 0 8px;
+    letter-spacing: -1px;
+}
+
+.track-info > p {
+    color: #888;
+    margin: 5px 0;
+}
+
+.track-description {
+    color: #aaa !important;
+    line-height: 1.6;
+    margin: 20px 0 !important;
+}
+
+.preview-player {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.preview-player iframe {
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+}
+
+.license-button {
+    margin-top: 25px;
+    width: 100%;
+}
+/* LICENSE POPUP ANIMATION */
+
+.license-popup {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.license-window {
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s ease;
+}
+
+.license-popup.active {
+    opacity: 1;
+}
+
+.license-popup.active .license-window {
+    transform: translateY(0) scale(1);
+}
+.about-tagline {
+    margin-top: 35px;
+
+    color: #ff7a18;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+/* WHAT I MAKE */
+
+.music-style-section {
+    border-top: 1px solid #21150e;
+}
+
+.music-style-section h2 {
+    line-height: 0.95;
+}
+/* CUSTOM MUSIC FORM */
+
+.custom-music-window {
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.custom-music-window h2 {
+    text-align: center;
+}
+
+.custom-intro {
+    color: #999;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.custom-music-window label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    color: #ff7a18;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.custom-music-window input,
+.custom-music-window textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #302017;
+    border-radius: 10px;
+
+    background: #0b0908;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    outline: none;
+}
+
+.custom-music-window input:focus,
+.custom-music-window textarea:focus {
+    border-color: #ff7a18;
+}
+
+.custom-music-window textarea {
+    resize: vertical;
+}
+
+.custom-music-window input::placeholder,
+.custom-music-window textarea::placeholder {
+    color: #555;
+}
+
+.custom-submit {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 16px;
+}
+
+@media (max-width: 600px) {
+
+    .custom-music-window {
+        padding: 30px 22px;
+    }
+
+}
+/* TERMS PAGE */
+
+.terms-page {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.terms-page h1 {
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 0.9;
+    margin: 20px 0;
+}
+
+.terms-updated {
+    color: #666;
+    margin-bottom: 80px;
+}
+
+.terms-section {
+    margin-bottom: 60px;
+}
+
+.terms-section h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.terms-section p {
+    color: #999;
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.terms-email {
+    color: #ff7a18 !important;
+}
+
+@media (max-width: 600px) {
+
+    .terms-page {
+        padding: 70px 25px;
+    }
+
+    .terms-section {
+        margin-bottom: 45px;
+    }
+
+    .terms-section h2 {
+        font-size: 22px;
+    }
+
+}

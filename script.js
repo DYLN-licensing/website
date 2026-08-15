@@ -53,9 +53,9 @@ function openLicense(type, price) {
 
     popup.style.display = "flex";
 
-requestAnimationFrame(() => {
-    popup.classList.add("active");
-});
+    requestAnimationFrame(() => {
+        popup.classList.add("active");
+    });
 }
 
 
@@ -74,8 +74,11 @@ function closeLicense() {
 
 function continueLicense() {
 
-    const title = document.getElementById("license-title").textContent;
-    const price = document.getElementById("license-price").textContent;
+    const title =
+        document.getElementById("license-title").textContent;
+
+    const price =
+        document.getElementById("license-price").textContent;
 
     const subject = encodeURIComponent(
         "Silvertone 13 — " + title
@@ -94,6 +97,8 @@ function continueLicense() {
         "?subject=" + subject +
         "&body=" + body;
 }
+
+
 function contactMe() {
 
     const subject = encodeURIComponent(
@@ -112,9 +117,12 @@ function contactMe() {
         "?subject=" + subject +
         "&body=" + body;
 }
+
+
 function openCustomMusic() {
 
-    const popup = document.getElementById("custom-music-popup");
+    const popup =
+        document.getElementById("custom-music-popup");
 
     popup.style.display = "flex";
 
@@ -127,7 +135,8 @@ function openCustomMusic() {
 
 function closeCustomMusic() {
 
-    const popup = document.getElementById("custom-music-popup");
+    const popup =
+        document.getElementById("custom-music-popup");
 
     popup.classList.remove("active");
 
@@ -138,36 +147,68 @@ function closeCustomMusic() {
 }
 
 
-const formData = new FormData(customMusicForm);
+/* CUSTOM MUSIC FORM — WEB3FORMS */
 
-try {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-            method: "POST",
-            body: formData
+    const customMusicForm =
+        document.getElementById("custom-music-form");
+
+
+    customMusicForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const formData =
+                new FormData(customMusicForm);
+
+
+            try {
+
+                const response = await fetch(
+                    "https://api.web3forms.com/submit",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+
+                const result =
+                    await response.json();
+
+
+                if (result.success) {
+
+                    alert(
+                        "Thanks! Your request has been sent."
+                    );
+
+                    customMusicForm.reset();
+
+                    closeCustomMusic();
+
+                } else {
+
+                    alert(
+                        "Something went wrong. Please try again."
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                alert(
+                    "There was a problem sending your request. Please try again."
+                );
+
+            }
+
         }
     );
 
-    const result = await response.json();
-
-    if (result.success) {
-
-        alert("Thanks! Your request has been sent.");
-
-        customMusicForm.reset();
-
-        closeCustomMusic();
-
-    } else {
-
-        alert("Something went wrong. Please try again.");
-
-    }
-
-} catch (error) {
-
-    alert("There was a problem sending your request. Please try again.");
-
-}
+});

@@ -138,36 +138,49 @@ function closeCustomMusic() {
 }
 
 
-const customMusicForm = document.getElementById("custom-music-form");
+document.addEventListener("DOMContentLoaded", function () {
 
-customMusicForm.addEventListener("submit", async function (event) {
+    const customMusicForm =
+        document.getElementById("custom-music-form");
 
-    event.preventDefault();
+    customMusicForm.addEventListener("submit", async function (event) {
 
-    const formData = new FormData(customMusicForm);
+        event.preventDefault();
 
-    const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-            method: "POST",
-            body: formData
+        const formData = new FormData(customMusicForm);
+
+        try {
+
+            const response = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+            const result = await response.json();
+
+            if (result.success) {
+
+                alert("Thanks! Your request has been sent.");
+
+                customMusicForm.reset();
+
+                closeCustomMusic();
+
+            } else {
+
+                alert("Something went wrong. Please try again.");
+
+            }
+
+        } catch (error) {
+
+            alert("There was a problem sending your request. Please try again.");
+
         }
-    );
 
-    const result = await response.json();
-
-    if (result.success) {
-
-        alert("Thanks! Your request has been sent.");
-
-        customMusicForm.reset();
-
-        closeCustomMusic();
-
-    } else {
-
-        alert("Something went wrong. Please try again.");
-
-    }
+    });
 
 });

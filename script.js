@@ -137,7 +137,6 @@ function closeCustomMusic() {
 
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const customMusicForm =
@@ -147,39 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         event.preventDefault();
 
-        const formData = new FormData(customMusicForm);
-
-        try {
-
-            const response = await fetch(
-                "https://api.web3forms.com/submit",
-                {
-                    method: "POST",
-                    body: formData
-                }
-            );
-
-            const result = await response.json();
-
-            if (result.success) {
-
-                alert("Thanks! Your request has been sent.");
-
-                customMusicForm.reset();
-
-                closeCustomMusic();
-
-            } else {
-
-                alert("Something went wrong. Please try again.");
-
-            }
-
-        } catch (error) {
-
-            alert("There was a problem sending your request. Please try again.");
-
-        }
+        alert("FORM IS WORKING");
 
     });
 
